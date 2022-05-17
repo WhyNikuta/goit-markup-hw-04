@@ -12,6 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="./css/mystyle.css">
     <title>Студия</title>
 </head>
@@ -57,7 +58,7 @@
         <section class="hero overlay">
             <div class="container">
                 <h1 class="hero-title">ЭФФЕКТИВНОЕ РЕШЕНИЕ <br> ДЛЯ ВАШЕГО БИЗНЕСА</h1>
-                <button class="hero-button" type="button">Заказать услугу</button>
+                <button class="hero-button" type="button" data-modal-open>Заказать услугу</button>
             </div>
         </section>
 
@@ -67,7 +68,7 @@
             <div class="container">
                 <h2 class="title-third-fourth-sec visually-hidden">Наши преимущества</h2>
                 <ul class="descript">
-                    <li class="none-marker sec-item "> 
+                    <li class="none-marker sec-item ">
                         <!--  icon-antena -->
                         <div class="benefit-item">
                             <svg width="70" height="70">
@@ -122,14 +123,30 @@
                 <h2 class="title-third-fourth-sec ">Чем мы занимаемся</h2>
                 <!--  section work-section -->
                 <ul class="descript padd-third">
+
                     <li class="none-marker img-item ">
-                        <img src="images/1st/img-1.jpg" alt="Верстка" width="370">
+                        <div class="masters-top-wrap">
+                            <img src="images/1st/img-1.jpg" alt="Верстка" width="370">
+                            <p class="masters-top-text">
+                                Десктопные приложения
+                            </p>
+                        </div>
                     </li>
                     <li class="none-marker img-item">
-                        <img src="images/1st/img-2.jpg" alt="Оптимизация под телефон" width="370">
+                        <div class="masters-top-wrap">
+                            <img src="images/1st/img-2.jpg" alt="Оптимизация под телефон" width="370">
+                            <p class="masters-top-text">
+                                Мобильные приложения
+                            </p>
+                        </div>
                     </li>
                     <li class="none-marker img-item">
-                        <img src="images/1st/img-3.jpg" alt="Подбор цветов" width="370">
+                        <div class="masters-top-wrap">
+                            <img src="images/1st/img-3.jpg" alt="Подбор цветов" width="370">
+                            <p class="masters-top-text">
+                                Дизайнерские решения
+                            </p>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -399,6 +416,16 @@
             </div>
         </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="model">
+            <button type="button" class="model-close-btn" data-modal-close>
+                <svg class="btn-close-svg" width="11" height="11">
+                    <use href="./images/team-contact/symbol-defs.svg#icon-close"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>

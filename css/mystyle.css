@@ -30,10 +30,12 @@ img {
 
 .head {
   display: flex;
-}
-
-.border-head {
-  border-bottom: 1px solid #ececec;
+  /* position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  min-height: 80px;
+  background-color: #fff; */
 }
 
 :root {
@@ -72,6 +74,9 @@ img {
   letter-spacing: 0.02em;
   cursor: pointer;
   color: var(--title-color);
+
+  transition: color 250ms linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .a-nav:hover,
@@ -86,6 +91,23 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--brand-color);
+  position: relative;
+}
+
+.border-head {
+  border-bottom: 1px solid #ececec;
+}
+
+#active-now::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  display: block;
+  background: #2196f3;
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  margin-bottom: -1px;
 }
 
 .site-nav {
@@ -158,11 +180,49 @@ img {
 
 .img-item {
   margin-right: 30px;
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-item:hover .masters-top-text {
+  transform: translateY(0%);
+}
+
+.masters-top-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.masters-top-text {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  background: rgba(47, 48, 58, 0.8);
+  transform: translateY(100%);
+  transition: transform 250ms linear;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 .img-item:last-child {
   margin-right: 0;
 }
+
+
+
+
+
 
 /********************** Третя секція **********************/
 
@@ -251,6 +311,8 @@ img {
 
   border-radius: 4px;
   border: none;
+  transition: color 250ms linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-links .hero-button {
@@ -274,6 +336,8 @@ img {
   letter-spacing: 0.02em;
   cursor: pointer;
   color: var(--descript-color);
+  transition: color 250ms linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-link:hover,
@@ -382,6 +446,8 @@ img {
   text-align: center;
   border: none;
   border-radius: 4px;
+  transition: color 250ms linear, background 250ms, box-shadow 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /********************** Опис картинок в портфоліо **********************/
@@ -425,6 +491,8 @@ img {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-a-nav:hover,
@@ -435,6 +503,7 @@ img {
 /* footer */
 
 .flex-footer {
+  align-items: baseline;
   display: flex;
 }
 
@@ -467,6 +536,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-soc-item + .our-soc-item {
@@ -618,6 +689,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms, fill 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .masters-soc-link:hover,
@@ -654,10 +727,11 @@ img {
   justify-content: center;
   align-items: center;
   border: 1px solid #afb1b8;
-  /* padding: 16px 32px; */
   border-radius: 4px;
   width: 170px;
   height: 92px;
+  transition: border 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-icon-item + .client-icon-item {
@@ -676,6 +750,8 @@ img {
 
 .client-icon {
   fill: #afb1b8;
+  transition: fill 250ms, border 250ms; 
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-icon-item:hover .client-icon {
@@ -690,8 +766,106 @@ img {
   border: 1px solid var(--brand-color);
 }
 
+.port-shadow {
+  display: block;
+  transition: box-shadow 250ms ;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .port-shadow:hover,
 .port-shadow:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+/* 5th homework */
+
+/* .port-hover {
+} */
+.flex-element {
+  transition: translateY(0%);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flex-element:hover .master-text {
+  transform: translateY(0%);
+}
+
+.port-top-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.master-text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+
+  transform: translateY(100%);
+  transition: transform 250ms linear;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  /* or 156% */
+  letter-spacing: 0.03em;
+  color: #ffffff;
+
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  transition: opacity 250ms, visibility 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.model {
+  width: 528px;
+  min-height: 581px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.model-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transition: fill 250ms linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.model-close-btn:hover,
+.model-close-btn:focus {
+  fill: #2196f3;
 }
